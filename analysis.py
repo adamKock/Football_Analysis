@@ -14,8 +14,13 @@ from sklearn.metrics import mean_absolute_error, accuracy_score
 
 
 #Import and clean the data 
-df = pd.read_csv("Prem.csv")
+df = pd.read_csv("season1.csv")
 df = df.drop("Div" ,axis='columns')
+
+ftr= df.loc[df["FTR"] =="H"]
+
+
+print(df["FTR"].describe())
 
 
 df.drop(["HTR","Referee","HTHG","HTAG"] , axis='columns', inplace=True)
